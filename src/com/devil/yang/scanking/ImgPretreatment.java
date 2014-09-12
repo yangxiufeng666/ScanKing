@@ -20,7 +20,7 @@ public class ImgPretreatment {
 	}
 
 	/**
-	 * ½«Í¼Æ¬»¯³É»Ò¶ÈÍ¼
+	 * å°†å›¾ç‰‡åŒ–æˆç°åº¦å›¾
 	 * 
 	 * @param img
 	 * @return
@@ -33,7 +33,7 @@ public class ImgPretreatment {
 	}
 
 	/**
-	 * ¶ÔÍ¼Ïñ½øĞĞÔ¤´¦Àí
+	 * å¯¹å›¾åƒè¿›è¡Œé¢„å¤„ç†
 	 * 
 	 * @param img
 	 * @return
@@ -46,15 +46,15 @@ public class ImgPretreatment {
 
 		int[] p = new int[2];
 		int maxGrayValue = 0, minGrayValue = 255;
-		// ¼ÆËã×î´ó¼°×îĞ¡»Ò¶ÈÖµ
+		// è®¡ç®—æœ€å¤§åŠæœ€å°ç°åº¦å€¼
 		getMinMaxGrayValue(p);
 		minGrayValue = p[0];
 		maxGrayValue = p[1];
-		// ¼ÆËãµü´ú·¨ãĞÖµ
+		// è®¡ç®—è¿­ä»£æ³•é˜ˆå€¼
 		int T1 = getIterationHresholdValue(minGrayValue, maxGrayValue);
-		// // ¼ÆËã´ó½ò·¨ãĞÖµ
+		// // è®¡ç®—å¤§æ´¥æ³•é˜ˆå€¼
 		// int T2 = getOtsuHresholdValue(minGrayValue, maxGrayValue);
-		// // ¼ÆËã×î´óìØ·¨ãĞÖµ
+		// // è®¡ç®—æœ€å¤§ç†µæ³•é˜ˆå€¼
 		// int T3 = getMaxEntropytHresholdValue(minGrayValue, maxGrayValue);
 		// int[] T = { T1, T2, T3 };
 		//
@@ -65,11 +65,11 @@ public class ImgPretreatment {
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°Í¼Æ¬µÄ»Ò¶ÈÍ¼
+	 * è·å–å½“å‰å›¾ç‰‡çš„ç°åº¦å›¾
 	 * 
 	 * @param img
-	 *            Ô­Í¼Æ¬
-	 * @return »Ò¶ÈÍ¼
+	 *            åŸå›¾ç‰‡
+	 * @return ç°åº¦å›¾
 	 */
 	private static Bitmap getGrayImg() {
 
@@ -104,7 +104,7 @@ public class ImgPretreatment {
 		return grey;
 	}
 
-	// ÀûÓÃµü´ú·¨¼ÆËããĞÖµ
+	// åˆ©ç”¨è¿­ä»£æ³•è®¡ç®—é˜ˆå€¼
 	private static int getIterationHresholdValue(int minGrayValue,
 			int maxGrayValue) {
 		int T1;
@@ -131,8 +131,8 @@ public class ImgPretreatment {
 	}
 
 	/*
-	 * ÓÃ´ó½ò·¨¼ÆËããĞÖµT ´ó½ò·¨ÓÖ³ÆÎª×î´óÀà¼ä·½²î·¨£¬ÓÉ´ó½òÔÚ1979ÄêÌá³ö£¬Ñ¡È¡Ê¹Àà¼ä·½²î×î
-	 * ´óµÄ»Ò¶È¼¶×÷Îª·Ö¸îãĞÖµ£¬·½²îÖµÔ½´ó£¬ËµÃ÷Í¼ÏñÁ½²¿·Ö²î±ğÔ½´ó¡£
+	 * ç”¨å¤§æ´¥æ³•è®¡ç®—é˜ˆå€¼T å¤§æ´¥æ³•åˆç§°ä¸ºæœ€å¤§ç±»é—´æ–¹å·®æ³•ï¼Œç”±å¤§æ´¥åœ¨1979å¹´æå‡ºï¼Œé€‰å–ä½¿ç±»é—´æ–¹å·®æœ€
+	 * å¤§çš„ç°åº¦çº§ä½œä¸ºåˆ†å‰²é˜ˆå€¼ï¼Œæ–¹å·®å€¼è¶Šå¤§ï¼Œè¯´æ˜å›¾åƒä¸¤éƒ¨åˆ†å·®åˆ«è¶Šå¤§ã€‚
 	 */
 	private static int getOtsuHresholdValue(int minGrayValue, int maxGrayValue) {
 		int T = 0;
@@ -166,7 +166,7 @@ public class ImgPretreatment {
 		return T;
 	}
 
-	// ²ÉÓÃÒ»Î¬×î´óìØ·¨¼ÆËããĞÖµ
+	// é‡‡ç”¨ä¸€ç»´æœ€å¤§ç†µæ³•è®¡ç®—é˜ˆå€¼
 	private static int getMaxEntropytHresholdValue(int minGrayValue,
 			int maxGrayValue) {
 		int T3 = minGrayValue, sum = 0;
@@ -209,17 +209,17 @@ public class ImgPretreatment {
 		return T3;
 	}
 
-	// Õë¶Ôµ¥¸öãĞÖµ¶şÖµ»¯Í¼Æ¬
+	// é’ˆå¯¹å•ä¸ªé˜ˆå€¼äºŒå€¼åŒ–å›¾ç‰‡
 	private static Bitmap binarization(int T) {
-		// ÓÃãĞÖµT1¶ÔÍ¼Ïñ½øĞĞ¶şÖµ»¯
+		// ç”¨é˜ˆå€¼T1å¯¹å›¾åƒè¿›è¡ŒäºŒå€¼åŒ–
 		for (int i = 0; i < imgHeight; i++) {
 			for (int j = 0; j < imgWidth; j++) {
 				int gray = imgPixels[i * imgWidth + j];
 				if (gray < T) {
-					// Ğ¡ÓÚãĞÖµÉèÎª°×É«
+					// å°äºé˜ˆå€¼è®¾ä¸ºç™½è‰²
 					imgPixels[i * imgWidth + j] = Color.rgb(0, 0, 0);
 				} else {
-					// ´óÓÚãĞÖµÉèÎªºÚÉ«
+					// å¤§äºé˜ˆå€¼è®¾ä¸ºé»‘è‰²
 					imgPixels[i * imgWidth + j] = Color.rgb(255, 255, 255);
 				}
 			}
@@ -232,7 +232,7 @@ public class ImgPretreatment {
 		return result;
 	}
 
-	// ¼ÆËã×î´ó×îĞ¡»Ò¶È,±£´æÔÚÊı×éÖĞ
+	// è®¡ç®—æœ€å¤§æœ€å°ç°åº¦,ä¿å­˜åœ¨æ•°ç»„ä¸­
 	private static void getMinMaxGrayValue(int[] p) {
 		int minGrayValue = 255;
 		int maxGrayValue = 0;
@@ -250,13 +250,13 @@ public class ImgPretreatment {
 	}
 
 	/**
-	 * ÓÉ3¸öãĞÖµÍ¶Æ±¶şÖµ»¯Í¼Æ¬
+	 * ç”±3ä¸ªé˜ˆå€¼æŠ•ç¥¨äºŒå€¼åŒ–å›¾ç‰‡
 	 * 
 	 * @param img
-	 *            Ô­Í¼Æ¬
+	 *            åŸå›¾ç‰‡
 	 * @param T
-	 *            ÈıÖÖ·½·¨»ñµÃµÄãĞÖµ
-	 * @return ¶şÖµ»¯µÄÍ¼Æ¬
+	 *            ä¸‰ç§æ–¹æ³•è·å¾—çš„é˜ˆå€¼
+	 * @return äºŒå€¼åŒ–çš„å›¾ç‰‡
 	 */
 	private static Bitmap selectBinarization(int[] T) {
 		for (int i = 0; i < imgHeight; i++) {
@@ -278,7 +278,7 @@ public class ImgPretreatment {
 		return result;
 	}
 
-	// ¼ÆËãÏñËØµã£¨x,y)ÖÜÎ§ÏñËØµãµÄÖĞÖµ
+	// è®¡ç®—åƒç´ ç‚¹ï¼ˆx,y)å‘¨å›´åƒç´ ç‚¹çš„ä¸­å€¼
 	private static int getCenterValue(Bitmap img, int x, int y) {
 		int[] pix = new int[9];
 

@@ -1,5 +1,23 @@
 <resources>
 
-    <string name="app_name">ScanKing</string>
-
+    <string name="app_name">扫描王</string>
+    <!-- 二维码扫描 -->
+    <string name="scan_tip">请将二维码置于取景框内扫描</string>
+    <string name="scan_retry">二维码扫描出错啦,请重新扫描</string>
+    <string name="scan_title">扫一扫</string>
+    <string name="gallery">相册</string>
+    <string name="turn_light_on">开灯</string>
+    <string name="turn_light_off">关灯</string>
+    <string name="my_barcode">我的二维码</string>
+    <!-- 主页 -->
+    <string name="decode_picture">图像识别</string>
+    <string name="decode_barcode">条码扫描</string>
+    <string name="orc_lan_eng">英</string>
+    <string name="orc_lan_zh">中</string>
+    <string name="choose_from_camara">拍照</string>
+    <string name="choose_from_picturewall">相册选择</string>
+    <string name="the_choose_pic">选取的图片</string>
+    <string name="ocr_result_title">识别结果</string>
+    <string name="ocr_result_hint">请选择需要识别的图片（文字识别存在一定的误差，请对照对片修改）</string>
+    
 </resources>
