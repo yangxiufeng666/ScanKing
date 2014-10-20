@@ -40,6 +40,7 @@ public class OCRActivity extends Activity{
 	private String textResult;
 	private Bitmap bitmapSelected;
 	private Bitmap bitmapTreated;
+	private View decodeProgressView;
 	
 	private TessBaseAPI baseApi;
 
@@ -49,6 +50,7 @@ public class OCRActivity extends Activity{
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case SHOWRESULT:
+				decodeProgressView.setVisibility(View.GONE);
 				if (textResult.equals("")){
 					resultEditText.setText("识别失败");
 				}else{
@@ -85,7 +87,7 @@ public class OCRActivity extends Activity{
 		resultEditText = (EditText)findViewById(R.id.result);
 		btnCamera.setOnClickListener(new cameraButtonListener());
 		btnSelect.setOnClickListener(new selectButtonListener());
-
+		decodeProgressView = (View)findViewById(R.id.decodeView);
 		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
@@ -118,7 +120,7 @@ public class OCRActivity extends Activity{
 					"temp_cropped.jpg")));
 			
 			showPicture(ivSelected, bitmapSelected);
-			
+			decodeProgressView.setVisibility(View.VISIBLE);
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -175,7 +177,6 @@ public class OCRActivity extends Activity{
 	
 
  	public String doOcr(Bitmap bitmap, String language) {
-
 		baseApi.init(UnZipUtil.dstPath(getApplication())+File.separator, language);
 
 		bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
@@ -186,7 +187,7 @@ public class OCRActivity extends Activity{
 
 		baseApi.clear();
 		baseApi.end();
-
+		
 		return text;
 	}
 

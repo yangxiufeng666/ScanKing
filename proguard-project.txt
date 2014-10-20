@@ -18,3 +18,18 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-libraryjars libs/android-support-v4.jar  
+-dontwarn android.support.v4.**  
+-keep class android.support.v4.** { *; }  
+-keep public class * extends android.support.v4.**  
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.support.v4.app.FragmentActivity
+-keep public class * extends android.app.Activity
+-libraryjars libs/core-2.3.0.jar
+-dontwarn com.google.zxing.**
+-keep class com.google.zxing.** { *; }  
+-libraryjars libs/umeng-analytics-v5.2.4.jar
+-dontwarn com.umeng.analytics.**
+-keep class com.umeng.analytics.**{*;}
+-keep class u.aly.**{*;}
+-keep class com.googlecode.**{*;}

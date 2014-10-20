@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/decodeView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90000000" 
+    android:visibility="gone">
+    
+    <ProgressBar 
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateBehavior="cycle"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_centerInParent="true"/>
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:layout_below="@id/progress"
+	    android:textColor="@color/white"
+	    android:text="正在解析，请稍后..."/>
+</RelativeLayout>

@@ -93,5 +93,5 @@
                 android:maxHeight="300dp" />
         </LinearLayout>
     </ScrollView>
-
+	<include layout="@layout/decode_loading"/>
 </RelativeLayout>
