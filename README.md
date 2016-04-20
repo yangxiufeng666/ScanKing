@@ -7,7 +7,7 @@ OCR图片扫描器是一款可以扫描图片识别出文字的工具类应用�
 ##demo
 http://www.wandoujia.com/apps/com.devil.yang.scanking
 ##引用
-这里引用了某人的解析库，但是不记得地址了，知道的告诉我一下。谢谢。
+[Tesseract](https://github.com/rmtheis/tess-two)
 ##展示
 ![image](https://github.com/babylikebird/ScanKing/blob/master/1.jpeg)
 ![image](https://github.com/babylikebird/ScanKing/blob/master/2.jpeg)
